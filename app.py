@@ -11,7 +11,7 @@ import fire
 import questionary
 from pathlib import Path
 
-from qualifier.utils.fileio import load_csv, save_csv
+from qualifier.utils.fileio import (load_csv, save_csv)
 
 from qualifier.utils.calculators import (
     calculate_monthly_debt_ratio,
@@ -104,21 +104,34 @@ def find_qualifying_loans(bank_data, credit_score, debt, income, loan, home_valu
 
 
 
+   # @TODO: Complete the usability dialog for savings the CSV Files.
 
-
-def save_qualifying_loans(qualifying_loans):
+def save_qualifying_loans(qualifying_loans): 
     """Saves the qualifying loans to a CSV file.
 
     Args:
         qualifying_loans (list of lists): The qualifying bank loans.
+        ask_save (questionary.confirm): ask the user if they would like to save the CSV file
+        output_path (questionary.text): asks the user for the path for their new CSV file
+        if no path exists: exit and print a "cannot find this path" message
+        else: print a message that this file will not be saved
+    
     """
+   
 
     # @TODO: Complete the usability dialog for saving the CSV Files.
     ask_save =  questionary.confirm("Would you like save the qualifying loans as a .csv file? ").ask()
 
-    if ask_save =='yes':
-        ask_where = questionary.text("Where would you like to save the file? (Enter .csv").ask()
-        answer = 
+    if ask_save:
+        output_path = questionary.text("Where would you like to save the file? Please Provide output path(.csv):").ask()
+        csvpath = Path(output_path)
+        if not csvpath.exists():
+            sys.exit(f"Oops! Can't find this path: {csvpath}")
+        save_csv(csvpath, qualifying_loans)
+    else:
+        print("This file will not be saved")
+
+    
 
     
 
