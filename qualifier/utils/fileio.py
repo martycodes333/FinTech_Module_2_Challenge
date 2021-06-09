@@ -42,7 +42,7 @@ def save_csv(output_path, qualifying_loans):
             csvwriter: write the data to the csvfile
             qualifying loans (list of lists): a list of the rows of data for the new CSV file
             header (list): write a header for the new CSV list being saved
-            csvwriter
+            csvwriter.writerows: write the qualifying loans to multiple rows within the new CSV file
 
         Returns: 
             A saved CSV file at the user-specified file name (.csv) and directory
