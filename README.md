@@ -42,7 +42,9 @@ Upon launching the loan qualifier application you will be greeted with the follo
 
 ![Loan Qualifier Prompts](loan_qualifier_prompt.png)
 
+## Example Result
 
+![Saved CSV with Qualifying Loans from Prompt](saved_qualified_loans.png)
 ---
 
 ## Contributors
