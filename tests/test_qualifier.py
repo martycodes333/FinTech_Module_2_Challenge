@@ -17,7 +17,7 @@ def test_save_csv():
     
 
     # Use Path from pathlib to output the test csv to ./data/output/qualifying_loans.csv
-    qualifying_loans = "test"
+    qualifying_loans = "test" # Give qualifying loans variable a value to be passed into the Test CSV
     csvpath = Path("./tests/qualifying_loans.csv")
 
     fileio.save_csv(csvpath, qualifying_loans)
