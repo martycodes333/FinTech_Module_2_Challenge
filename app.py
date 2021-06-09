@@ -115,8 +115,12 @@ def save_qualifying_loans(qualifying_loans):
         output_path (questionary.text): asks the user for the path for their new CSV file
         if no path exists: exit and print a "cannot find this path" message
         else: print a message that this file will not be saved
+
+    Returns:
+        An option to save the qualified loans to a CSV file or exit the program.
     
     """
+    
    
 
     # @TODO: Complete the usability dialog for saving the CSV Files.
