@@ -49,7 +49,7 @@ Upon launching the loan qualifier application you will be greeted with the follo
 
 ## Contributors
 
-Brought to you by ET Home Loans.
+Brought to you by Martique Henton (martique.henton@gmail.com).
 
 ---
 
