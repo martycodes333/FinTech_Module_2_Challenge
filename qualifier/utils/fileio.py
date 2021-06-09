@@ -4,9 +4,8 @@
 This contains a helper function for loading and saving CSV files.
 
 """
-from app import find_qualifying_loans, save_qualifying_loans
 import csv
-from pathlib import Path
+# from pathlib import Path
 
 
 def load_csv(csvpath):
@@ -19,6 +18,7 @@ def load_csv(csvpath):
         A list of lists that contains the rows of data from the CSV file.
 
     """
+
     with open(csvpath, "r") as csvfile:
         data = []
         csvreader = csv.reader(csvfile, delimiter=",")
@@ -32,23 +32,30 @@ def load_csv(csvpath):
     return data
 
 
-header = ["Lender", "Max_Loan", "Amount", "Max_LTV", "Max_DTI"," Min_Credit","Score", "Interest_Rate"]
-
-def save_csv(output_path):
 
 
+def save_csv(output_path, qualifying_loans):
+    '''Saves the qualifying loans as a CSV file.
+    
+        Args:
+            with open(csvpath) Open a csvfile path
+            csvwriter: write the data to the csvfile
+            qualifying loans (list of lists): a list of the rows of data for the new CSV file
+            header (list): write a header for the new CSV list being saved
+            csvwriter
 
-# Set the output file path
-    output_path = Path("qualifying_loans.csv")
+        Returns: 
+            A saved CSV file at the user-specified file name (.csv) and directory
+        
+ 
+        
+    '''
+    header = ["Lender", "Max_Loan", "Amount", "Max_LTV", "Max_DTI"," Min_Credit_Score", "Interest_Rate"] 
 
-# print("writing the data to a csv file..."), a print statement to verify path is working 
 
-# @TODO: Use the csv library and `csv.writer` to write the header row
-# and each row of `loan.values()` from the `inexpensive_loans` list.
-    with open(output_path, 'w') as csvfile: #use 'with open' to open a new CSV file
-        csvwriter = save_csv.writer(csvfile) # create a csvwriter using the csv library
-        csvwriter.writerow(header) # use the csvwriter to write the 'header' variable as the first row
-        for bank_data in find_qualifying_loans:
-            csvwriter.writerow(save_qualifying_loans) # use the csvwriter to write the qualifying_loans to a row in the CSV file 
+    with open(output_path, 'w', newline="") as csvfile: #use 'with open' to open a new CSV file
+        csvwriter = csv.writer(csvfile) 
+        csvwriter.writerow(header) 
+        csvwriter.writerows(qualifying_loans)
+    
 
-# print(save_qualifying_loans) # a print statement to verify code is working
