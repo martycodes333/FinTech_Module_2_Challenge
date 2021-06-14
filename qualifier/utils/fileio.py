@@ -50,7 +50,7 @@ def save_csv(output_path, qualifying_loans):
  
         
     '''
-    header = ["Lender", "Max_Loan", "Amount", "Max_LTV", "Max_DTI"," Min_Credit_Score", "Interest_Rate"] 
+    header = ["Lender", "Max_Loan_Amount", "Max_LTV", "Max_DTI"," Min_Credit_Score", "Interest_Rate"] 
 
 
     with open(output_path, 'w', newline="") as csvfile: #use 'with open' to open a new CSV file
