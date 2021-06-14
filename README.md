@@ -44,7 +44,7 @@ Upon launching the loan qualifier application you will be greeted with the follo
 
 ## Example Result
 
-![Saved CSV with Qualifying Loans from Prompt](saved_qualified_loans.png)
+![Saved CSV with Qualifying Loans from Prompt](save_qualifying_loans2.png)
 ---
 
 ## Contributors
